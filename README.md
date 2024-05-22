@@ -68,12 +68,12 @@ test('basic test', async ({ page }) => {
 ## Running Tests
 To run your tests, use the following command:
 ```
-npx playwright test
+yarn playwright test
 ```
 This will run all the tests located in the tests directory.
 
 ## Configuration
-You can configure Playwright settings in the playwright.config.js file
+You can configure Playwright settings in the `playwright.config.js` file
 
 ## Debugging
 To debug tests, you can run them in non-headless mode and use Playwright's built-in tools:

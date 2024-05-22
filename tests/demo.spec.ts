@@ -31,6 +31,7 @@ test('Login failure', async ({ page }) => {
 test('Login successfully', async ({ page }) => {
   const email = "sangmai350@gmail.com";
   const password = "ed735e787154";
+  const title = "Dashboard | Chartmetric";
 
   await page.goto("https://app.staging.chartmetric.com/");
 
@@ -43,5 +44,7 @@ test('Login successfully', async ({ page }) => {
   // Click Log In button
   await page.getByRole('button', { name: 'Log In' }).click();
 
-  // Expect to enter an authentication code.
+  // Expect to successfully access the dashboard
+  await expect(page).toHaveTitle(title);
+  await expect(page.getByRole('img', { name: 'User Image' })).toBeVisible();
 });
